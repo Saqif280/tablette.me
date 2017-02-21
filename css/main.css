@@ -1,0 +1,43 @@
+body{
+	overflow: hidden;
+}
+h1{
+	font-size: 100pt;
+	color: white;
+}
+h2{
+	font-size: 30pt;
+	color: white;
+}
+#outer {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin-top: 60px;
+}
+#middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+#clock{
+	margin-left: auto;
+	margin-right: auto; 
+	margin-bottom: 110px;
+	text-align: center;
+	clear: both;
+}
+#searchForm{
+	margin: 12px 5px 0 10px;
+	/*length: 500px;*/
+	float: left;
+}
+#settings{
+	float: right;
+	text-align: right;
+	margin: 12px 10px 0 0;
+}
+#sType{
+	margin: 13px 0 0 10px;
+	float: left;
+}
