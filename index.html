@@ -1,0 +1,417 @@
+<!-- https://source.unsplash.com/user/saqif/likes/1920x1080 -->
+<html>
+<head>
+    <title>Tablette.me</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://saqif.com/tablette.me/cgi-bin/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="http://saqif.com/tablette.me/cgi-bin/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://saqif.com/tablette.me/cgi-bin/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="http://saqif.com/tablette.me/cgi-bin/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="http://saqif.com/tablette.me/cgi-bin/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="http://saqif.com/tablette.me/cgi-bin/manifest.json">
+    <link rel="shortcut icon" href="http://saqif.com/tablette.me/cgi-bin/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="http://saqif.com/tablette.me/cgi-bin/mstile-144x144.png">
+    <meta name="msapplication-config" content="http://saqif.com/tablette.me/cgi-bin/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="js/backstretch.js"></script>
+    <style>
+	body{
+	overflow: hidden;
+	}
+   	h1{
+	font-size: 100pt;
+	color: white;
+	}
+	h2{
+	font-size: 30pt;
+	color: white;
+	}
+	#outer {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin-top: 60px;
+	}
+	#middle {
+	display: table-cell;
+	vertical-align: middle;
+	}
+	#clock{
+   	margin-left: auto;
+   	margin-right: auto; 
+   	margin-bottom: 110px;
+	text-align: center;
+	clear: both;
+	}
+	#searchForm{
+	margin: 12px 5px 0 10px;
+	/*length: 500px;*/
+	float: left;
+	}
+	#settings{
+	float: right;
+	text-align: right;
+	margin: 12px 10px 0 0;
+	}
+	#sType{
+	margin: 13px 0 0 10px;
+	float: left;
+	}
+	
+    </style>
+</head>
+
+<body>
+
+<div class="modal fade" id="nameModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Welcome to Tablette.me</h4>
+      </div>
+      <div class="modal-body">
+        Tablette remembers your preferences without a login! To begin using Tablette, enter the name you would like to use below.</br></br>
+        <div class="input-group">Name:<input id="inputName1" type="text" class="form-control" placeholder="eg. John"></input>
+      </div>     
+    </div>
+      <div class="modal-footer">
+        <button id="inputNameSave1" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="nameModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Change Your Name</h4>
+      </div>
+      <div class="modal-body">
+        Tablette remembers your preferences without a login! Enter the name you would like to use below.</br></br>
+        <div class="input-group">New Name:<input id="inputName2" type="text" class="form-control" placeholder="eg. John"></input>
+      </div>     
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="inputNameSave2" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wallRotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Set Wallpapers to Rotate</h4>
+      </div>
+      <div class="modal-body">
+        Search for type of wallpapers to rotate through. This will automatically cycle every page load.</br></br>
+        <div>query:<input id="wallRotateUrl" type="text" class="form-control" placeholder="e.g. nature"></input>
+      </div>     
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="wallRotate" type="button" class="btn btn-primary" data-dismiss="modal">Set</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wallModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Import a Wallpaper</h4>
+      </div>
+      <div class="modal-body">
+        Add a wallpaper by copying and pasting the url into the box below.</br></br>
+        <div>url:<input id="wallUrl" type="text" class="form-control" placeholder="https://www.domain.com/file.jpg"></input>
+      </div>     
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="wallUrlSave" type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Clear All Preferences</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to clear all saved data from this site?</br>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="resetConfirm" type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form class="form-inline" id="searchForm" role="search" action="https://www.google.com/search">
+	<div class="input-group">
+		<input type="text" class="form-control input-sm" placeholder="Search" name="q" autocomplete='off'></input>
+            <div class="input-group-btn">
+                <button class="btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>                        
+            </div>          
+        </div>     
+</form>
+
+<div class="dropdown" id="sType">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+    <span class="glyphicon glyphicon-cog"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+          <li role="presentation"><a id="webB" style="font-weight: bold;" role="menuitem" tabindex="-1" href="#">Web</a></li>
+          <li role="presentation"><a id="imgB" role="menuitem" tabindex="-1" href="#">Images</a></li>
+          <li role="presentation"><a id="vidB" role="menuitem" tabindex="-1" href="#">Videos</a></li>
+        </ul>
+</div>
+
+<div class="dropdown" id="settings">
+    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Settings <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
+          <li id="nameChange" data-toggle="modal" data-target="#nameModal2" role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Name</a></li>
+          <!-- <li id="wallChange" role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Wallpaper</a></li> -->
+          <li id="rotateWall" data-toggle="modal" data-target="#wallRotateModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Set Wallpapers</a></li>
+          <li id="addWall" data-toggle="modal" data-target="#wallModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Import a Wallpaper</a></li>
+          <li role="presentation" class="divider"></li>
+          <li id="saqifInfo" role="presentation"><a role="menuitem" tabindex="-1" href="http://saqif.com">About Saqif</a></li>
+          <li id="reset" data-toggle="modal" data-target="#resetModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Reset</a></li>
+        </ul>
+</div>
+
+<div id="outer">
+<div id="middle">
+<div id="clock">
+    <h1 id="time"></h1>
+    <h2 id="greeting">_____________________</h2>
+</div>
+</div>
+</div>
+
+<script>
+
+    if(window.location.href.indexOf("tablette.me") < 0)
+    {
+	   window.location.replace("http://tablette.me");
+    }
+
+    //var wallpaperList = ["cubes.jpg", "nebula.jpg", "beach.jpg", "forest.jpg", "ltp.jpg", "wolf.jpg", "mugs.jpg", "alley.jpg", "sunset.jpg", "mountains.jpg", "mountains2.jpg", "mountains3.jpg", "stars.jpg", "sunset2.jpg", "aurora.jpg", "temple.jpg"];
+    
+    if(localStorage.wChange != "true")
+    {
+    	$("#wallChange").attr("data-toggle","tooltip");
+    	$("#wallChange").attr("data-placement","left");
+    	$("#wallChange").attr("title","Wallpapers may be slow to load on first initialization");
+    }
+
+    function checkUser()
+    {
+    	var username = localStorage.username;
+    	if (username == null || username == "")
+    	{
+    	    $("#nameModal1").modal("toggle");
+    	}
+    	name = username;
+    }
+    
+    function checkWall()
+    {
+    	// var wallpaper = localStorage.wallpaper;
+    	// if (wallpaper == null || wallpaper == "")
+    	// {
+     //        var randNum = Math.floor(Math.random()*wallpaperList.length);
+     //        localStorage.wallpaper = randNum.toString();
+    	// }
+    	// wallNum = Number(localStorage.wallpaper);
+    	// localStorage.wallLink = "wallpapers/" + wallpaperList[wallNum];
+    	if (localStorage.wallUrl != null && localStorage.wallUrl != "")
+    	{
+    	    localStorage.wallLink = localStorage.wallUrl;
+    	}
+        else{
+            localStorage.wallUrl= "https://source.unsplash.com/user/saqif/likes";
+            localStorage.wallLink = localStorage.wallUrl;
+        }
+        $.backstretch(localStorage.wallLink,{speed: 700});
+    }
+    
+    checkUser();
+    checkWall();
+
+    function printTime()
+    {
+    	var time = new Date();
+    	var hours = time.getHours();
+    	var mins = time.getMinutes();
+    	var seconds = time.getSeconds();
+    	var ampm = "pm";
+    	var secZ = "";
+    	var minZ = "";
+    	
+    	if (hours > 12)
+    	{
+    	    hours -= 12;
+    	}
+    	else if (hours == 0)
+    	{
+    	    hours = 12;
+    	}
+    	if (mins < 10)
+    	{
+    	    minZ = "0"
+    	}
+    	if (seconds < 10)
+    	{
+    	    secZ = "0"
+    	}
+    	
+    	if (time.getHours() < 12)
+    	{
+    	    ampm = "am";
+    	    $("#greeting").html("Good Morning, " + name + ".");
+    	}
+    	if ((time.getHours() < 5) || (time.getHours() > 22))
+    	{
+    	    $("#greeting").html("Good Night, " + name + ".");
+    	}
+    	else if (time.getHours() > 17)
+    	{
+    	    $("#greeting").html("Good Evening, " + name + ".");
+    	}
+    	else if (time.getHours() >= 12)
+    	{
+    	    $("#greeting").html("Good Afternoon, " + name + ".");
+    	}
+    	$("#time").html(hours + ":" + minZ + mins + ":" + secZ + seconds + " " + ampm);
+    }
+    setInterval("printTime()",1000);
+    
+    $(function ()
+    {
+	$('[data-toggle="popover"]').popover()
+	$('[data-toggle="tooltip"]').tooltip()
+    })
+    
+    $("#inputNameSave1").click(
+    function(){
+        username = $("#inputName1").val();
+        if (username != "" && username != null)
+        {
+	    localStorage.username = username;
+        }
+        else
+        {
+            localStorage.username = "user";
+        }
+        name = username;
+    });
+    
+    $("#inputNameSave2").click(
+    function(){
+        username = $("#inputName2").val();
+        if (username != "" && username != null)
+        {
+	    localStorage.username = username;
+        }
+        name = localStorage.username;
+    });
+    
+    $("#wallUrlSave").click(
+    function(){
+    	var url = $("#wallUrl").val();
+    	localStorage.wallUrl = url;
+    	checkWall();
+    });
+    
+    $("#wallChange").click(
+    function(){
+        localStorage.wChange = "true";
+    	wallNum++;
+    	if (wallNum >= wallpaperList.length)
+    	{
+	    wallNum = 0;
+    	}
+    	localStorage.wallpaper = wallNum.toString();
+    	localStorage.wallUrl = "";
+    	checkWall();
+    });
+
+    $("#wallRotate").click(
+    function(){
+        var url = "https://source.unsplash.com/" + window.innerWidth.toString() + "x" + window.innerHeight.toString() + "/?" + $("#wallRotateUrl").val();
+        // var url = "https://source.unsplash.com/featured/?" + $("#wallRotateUrl").val();
+        localStorage.wallUrl = url;
+        checkWall();
+    });
+    
+    $("#resetConfirm").click(
+    function(){
+    	localStorage.clear();
+    	location.reload();
+    })
+    
+    $("#webB").click(
+    function(){
+	document.getElementById("searchForm").action = "https://www.google.com/search";
+	$("#webB").css("font-weight","bold");
+	$("#imgB").css("font-weight","normal");
+	$("#vidB").css("font-weight","normal");
+    });
+    
+    $("#imgB").click(
+    function(){
+	document.getElementById("searchForm").action = "http://images.google.com/images";
+	$("#webB").css("font-weight","normal");
+	$("#imgB").css("font-weight","bold");
+	$("#vidB").css("font-weight","normal");
+    });
+    
+    $("#vidB").click(
+    function(){
+	document.getElementById("searchForm").action = "https://www.youtube.com/results?search_query=";
+	$("#webB").css("font-weight","normal");
+	$("#imgB").css("font-weight","normal");
+	$("#vidB").css("font-weight","bold");
+    });
+    
+    
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63008523-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
