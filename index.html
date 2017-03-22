@@ -25,150 +25,174 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="js/backstretch.js"></script>
-    <link href="css/main.css" rel="stylesheet">
+    <script src="js/prayTimes.js"></script>
+    <link href="css/main.css?v5" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="modal fade" id="nameModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Welcome to Tablette.me</h4>
-      </div>
-      <div class="modal-body">
-        Tablette remembers your preferences without a login! To begin using Tablette, enter the name you would like to use below.</br></br>
-        <div class="input-group">Name:<input id="inputName1" type="text" class="form-control" placeholder="eg. John"></input>
-      </div>     
-    </div>
-      <div class="modal-footer">
-        <button id="inputNameSave1" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="nameModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Change Your Name</h4>
-      </div>
-      <div class="modal-body">
-        Tablette remembers your preferences without a login! Enter the name you would like to use below.</br></br>
-        <div class="input-group">New Name:<input id="inputName2" type="text" class="form-control" placeholder="eg. John"></input>
-      </div>     
-    </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button id="inputNameSave2" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="wallRotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Set Wallpapers to Rotate</h4>
-      </div>
-      <div class="modal-body">
-        Search for type of wallpapers to rotate through. This will automatically cycle every page load.</br></br>
-        <div>query:<input id="wallRotateUrl" type="text" class="form-control" placeholder="e.g. nature"></input>
-      </div>     
-    </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button id="wallRotate" type="button" class="btn btn-primary" data-dismiss="modal">Set</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="wallModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Import a Wallpaper</h4>
-      </div>
-      <div class="modal-body">
-        Add a wallpaper by copying and pasting the url into the box below.</br></br>
-        <div>url:<input id="wallUrl" type="text" class="form-control" placeholder="https://www.domain.com/file.jpg"></input>
-      </div>     
-    </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button id="wallUrlSave" type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Clear All Preferences</h4>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to clear all saved data from this site?</br>
+  <div class="modal fade" id="nameModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Welcome to Tablette.me</h4>
         </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button id="resetConfirm" type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+        <div class="modal-body">
+          Tablette remembers your preferences without a login! To begin using Tablette, enter the name you would like to use below.</br></br>
+          <div class="input-group">Name:<input id="inputName1" type="text" class="form-control" placeholder="eg. John"></input>
+        </div>     
+      </div>
+        <div class="modal-footer">
+          <button id="inputNameSave1" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<form class="form-inline" id="searchForm" role="search" action="https://www.google.com/search">
-	<div class="input-group">
-		<input type="text" class="form-control input-sm" placeholder="Search" name="q" autocomplete='off'></input>
-            <div class="input-group-btn">
-                <button class="btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>                        
-            </div>          
+  <div class="modal fade" id="nameModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Change Your Name</h4>
+        </div>
+        <div class="modal-body">
+          Tablette remembers your preferences without a login! Enter the name you would like to use below.</br></br>
+          <div class="input-group">New Name:<input id="inputName2" type="text" class="form-control" placeholder="eg. John"></input>
         </div>     
-</form>
-
-<div class="dropdown" id="sType">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-    <span class="glyphicon glyphicon-cog"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a id="webB" style="font-weight: bold;" role="menuitem" tabindex="-1" href="#">Web</a></li>
-          <li role="presentation"><a id="imgB" role="menuitem" tabindex="-1" href="#">Images</a></li>
-          <li role="presentation"><a id="vidB" role="menuitem" tabindex="-1" href="#">Videos</a></li>
-        </ul>
-</div>
-
-<div class="dropdown" id="settings">
-    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Settings <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
-          <li id="nameChange" data-toggle="modal" data-target="#nameModal2" role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Name</a></li>
-          <!-- <li id="wallChange" role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Wallpaper</a></li> -->
-          <li id="rotateWall" data-toggle="modal" data-target="#wallRotateModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Set Wallpapers</a></li>
-          <li id="addWall" data-toggle="modal" data-target="#wallModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Import a Wallpaper</a></li>
-          <li role="presentation" class="divider"></li>
-          <li id="saqifInfo" role="presentation"><a role="menuitem" tabindex="-1" href="http://saqif.com">About Saqif</a></li>
-          <li id="reset" data-toggle="modal" data-target="#resetModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Reset</a></li>
-        </ul>
-</div>
-
-<div id="outer">
-  <div id="middle">
-    <div id="clock">
-        <h1 id="time"></h1>
-        <h2 id="greeting">_____________________</h2>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button id="inputNameSave2" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="js/main.js"></script>
+  <div class="modal fade" id="wallRotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Set Wallpapers to Rotate</h4>
+        </div>
+        <div class="modal-body">
+          Search for type of wallpapers to rotate through. This will automatically cycle every page load.</br></br>
+          <div>query:<input id="wallRotateUrl" type="text" class="form-control" placeholder="e.g. nature"></input>
+        </div>     
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button id="wallRotate" type="button" class="btn btn-primary" data-dismiss="modal">Set</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="modal fade" id="wallModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Import a Wallpaper</h4>
+        </div>
+        <div class="modal-body">
+          Add a wallpaper by copying and pasting the url into the box below.</br></br>
+          <div>url:<input id="wallUrl" type="text" class="form-control" placeholder="https://www.domain.com/file.jpg"></input>
+        </div>     
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button id="wallUrlSave" type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="prayerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Configure Prayer Settings</h4>
+        </div>
+        <div class="modal-body">
+          <button class="btn btn-success" id="calibrateLoc">Calibrate Location</button><br/>
+          </br>
+          <label>Visible
+            <input type="checkbox" id="pVisCheck">
+          </label></br>
+          <p id="x"></p>
+        </div>  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button id="prayerSettingSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Clear All Preferences</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to clear all saved data from this site?</br>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button id="resetConfirm" type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="form-inline" id="searchForm" role="search" action="https://www.google.com/search">
+  	<div class="input-group">
+  		<input type="text" class="form-control input-sm" placeholder="Search" name="q" autocomplete='off'></input>
+              <div class="input-group-btn">
+                  <button class="btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>                        
+              </div>          
+          </div>     
+  </form>
+
+  <div class="dropdown" id="sType">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      <span class="glyphicon glyphicon-cog"></span></button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a id="webB" style="font-weight: bold;" role="menuitem" tabindex="-1" href="#">Web</a></li>
+            <li role="presentation"><a id="imgB" role="menuitem" tabindex="-1" href="#">Images</a></li>
+            <li role="presentation"><a id="vidB" role="menuitem" tabindex="-1" href="#">Videos</a></li>
+          </ul>
+  </div>
+
+  <div class="dropdown" id="settings">
+      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Settings <span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
+            <li id="nameChange" data-toggle="modal" data-target="#nameModal2" role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Name</a></li>
+            <!-- <li id="wallChange" role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Wallpaper</a></li> -->
+            <li id="rotateWall" data-toggle="modal" data-target="#wallRotateModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Set Wallpapers</a></li>
+            <li id="addWall" data-toggle="modal" data-target="#wallModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Import a Wallpaper</a></li>
+            <li id="setPrayer" data-toggle="modal" data-target="#prayerModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Prayer Settings</a></li>
+            <li role="presentation" class="divider"></li>
+            <li id="saqifInfo" role="presentation"><a role="menuitem" tabindex="-1" href="http://saqif.com">About Saqif</a></li>
+            <li id="reset" data-toggle="modal" data-target="#resetModal" role="presentation"><a role="menuitem" tabindex="-1" href="#">Reset</a></li>
+          </ul>
+  </div>
+
+  <div id="outer">
+    <div id="middle">
+      <div id="clock">
+          <h1 id="time"></h1>
+          <h2 id="greeting">_____________________</h2>
+          <h3 id="prayerTimes"></h3>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js?v3"></script>
 </body>
 </html>
