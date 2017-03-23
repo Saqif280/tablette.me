@@ -39,6 +39,12 @@ function checkWall(){
 }
 
 function checkPVisible(){
+	if (localStorage.latCoor != null && typeof localStorage.latCoor != undefined){
+  	latCoor = localStorage.latCoor;
+  	lonCoor = localStorage.lonCoor;
+  	$("#latitudeIn").val(latCoor);
+  	$("#longitudeIn").val(lonCoor);
+  }
 	if (localStorage.pVisible == null || typeof localStorage.pVisible == undefined){
     localStorage.pVisible = "false";
     $("#prayerTimes").hide();
@@ -54,18 +60,18 @@ function checkPVisible(){
 		$("#prayerTimes").hide();
 		$('#pVisCheck').prop('checked', false);
 	}
+	
 }
 
-var xCoor;
-var yCoor;
+var latCoor; 
+var lonCoor;
 
 // PRAYER CODE
 function showPTimes(){
-	xCoor = 42.4508883; 
-  yCoor = -76.4843832;
+	
 	prayTimes.setMethod('ISNA');
 	var date = new Date(); // today
-	var prayerTimes = prayTimes.getTimes(date, [xCoor, yCoor], -5,"auto","12h");
+	var prayerTimes = prayTimes.getTimes(date, [latCoor, lonCoor], -5,"auto","12h");
 	var prayers = ['Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha', 'Midnight'];
 
 	var html = '';
@@ -179,24 +185,44 @@ $("#resetConfirm").click(function(){
 });
 
 $("#calibrateLoc").click(function(){
-	getLocation();
+	navigator.geolocation.getCurrentPosition(success, error, options);
 });
 
-function getLocation() {
-	var x = $("#x");
-  if (navigator.geolocation) {
-  	navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+var options = {
+  enableHighAccuracy: true,
+  timeout: 10000,
+  maximumAge: 0
+};
 
-function showPosition(position) {
-	var x = $("#x");
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
+function success(pos) {
+  var crd = pos.coords;
+  // console.log('Your current position is:');
+  // console.log(`Latitude : ${crd.latitude}`);
+  // console.log(`Longitude: ${crd.longitude}`);
+  // console.log(`More or less ${crd.accuracy} meters.`);
+  $("#savedLocation").text("Current Saved Location:");
+  localStorage.latCoor = `${crd.latitude}`;
+  localStorage.lonCoor = `${crd.longitude}`;
+  latCoor = localStorage.latCoor;
+  lonCoor = localStorage.lonCoor;
+  $("#latitudeIn").val(latCoor);
+  $("#longitudeIn").val(lonCoor);
+  showPTimes();
+};
 
+function error(err) {
+  console.warn('ERROR(${err.code}): ${err.message}');
+  $("#savedLocation").text("Current Saved Location: [Error Loading Data - Retry]");
+};
+
+
+$("#locationIn").click(function(){
+	localStorage.latCoor = $("#latitudeIn").val();
+  localStorage.lonCoor = $("#longitudeIn").val();
+	latCoor = localStorage.latCoor;
+  lonCoor = localStorage.lonCoor;
+  showPTimes();
+});
 
 // SEARCH BUTTONS
 $("#webB").click(function(){

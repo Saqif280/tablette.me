@@ -118,12 +118,20 @@
           <h4 class="modal-title" id="myModalLabel">Configure Prayer Settings</h4>
         </div>
         <div class="modal-body">
-          <button class="btn btn-success" id="calibrateLoc">Calibrate Location</button><br/>
-          </br>
           <label>Visible
             <input type="checkbox" id="pVisCheck">
-          </label></br>
-          <p id="x"></p>
+          </label><br/>
+          <br/>
+          <p id="savedLocation">Current Saved Location: </p>
+          <label>Latitude:
+            <input id="latitudeIn">
+          </label><br/>
+          <label>Longitude:
+            <input id="longitudeIn">
+          </label><br/>
+          <br/>
+          <button class="btn btn-primary" id="locationIn">Manual Set</button>
+          <button class="btn btn-success" id="calibrateLoc">Auto Set</button><br/>
         </div>  
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
